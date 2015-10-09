@@ -20,6 +20,7 @@
 		506DFECB1BC0AB5A004C3474 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DFEC81BC0AB5A004C3474 /* Nimble.framework */; };
 		506DFECC1BC0AB5A004C3474 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DFEC91BC0AB5A004C3474 /* Quick.framework */; };
 		506DFECE1BC0CC3D004C3474 /* StandardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFECD1BC0CC3D004C3474 /* StandardTypes.swift */; settings = {ASSET_TAGS = (); }; };
+		50BCD35A1BC84C99009CF984 /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BCD3591BC84C99009CF984 /* NSUserDefaults.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		506DFEC81BC0AB5A004C3474 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		506DFEC91BC0AB5A004C3474 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		506DFECD1BC0CC3D004C3474 /* StandardTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StandardTypes.swift; path = Extensions/StandardTypes.swift; sourceTree = "<group>"; };
+		50BCD3591BC84C99009CF984 /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSUserDefaults.swift; path = Extensions/NSUserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				506DFEC11BC09D38004C3474 /* NSKeyedArchiver.swift */,
+				50BCD3591BC84C99009CF984 /* NSUserDefaults.swift */,
 				506DFECD1BC0CC3D004C3474 /* StandardTypes.swift */,
 			);
 			name = Extensions;
@@ -295,6 +298,7 @@
 				506DFEC41BC09DAA004C3474 /* Archivable.swift in Sources */,
 				506DFECE1BC0CC3D004C3474 /* StandardTypes.swift in Sources */,
 				506DFEBF1BC09A66004C3474 /* Decoder.swift in Sources */,
+				50BCD35A1BC84C99009CF984 /* NSUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
