@@ -15,23 +15,25 @@ class StorableValueTests: QuickSpec {
     
     override func spec() {
 
-        describe("Archivable") {
+        describe("Archivable type") {
 
-            describe("encoding a simple value") {
+            let newport = Place(city: "Newport", state: "RI")
+            let person = Person(name: "giles", age: 21, home: newport)
+            let data = person.encodedData()
+            let restoredPerson = Person.decodedValue(data)
 
-                let person = Person(name: "giles", age: 21) // dummy
-                let data = person.encodedData() // encode so we can decode
-                let restoredPerson = Person.decodedValue(data)
+            context("when decoded") {
 
-                describe("restoredPerson") {
-                    it("should not be nil") {
-                        expect(restoredPerson).toNot(beNil())
-                    }
+                it("should not be nil") {
+                    expect(restoredPerson).toNot(beNil())
+                }
 
-                    it("should hold onto the original value") {
-                        expect(restoredPerson?.name).to(equal("giles"))
-                        expect(restoredPerson?.age).to(equal(21))
-                    }
+                it("should be equivalent to the original value") {
+                    expect(restoredPerson).to(equal(person))
+                }
+
+                it("should retain stored Archivable values") {
+                    expect(restoredPerson!.home).to(equal(person.home))
                 }
 
             }
