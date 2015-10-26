@@ -18,21 +18,19 @@ public struct Encoder {
         archiver = NSKeyedArchiver(forWritingWithMutableData: data)
     }
 
+    public func encodedData() -> NSData {
+        archiver.finishEncoding()
+        return data
+    }
+
     public func encode<Value: Archivable>(value: Value?, forKey key: String) {
         if let value = value {
             archiver.encodeObject(value.encodedData(), forKey: key)
         }
     }
 
-    public func encode<Value: Archivable>(value: Value?) {
-        if let value = value {
-            value.encode(archiver)
-        }
-    }
-
-    public func encodedData() -> NSData {
-        archiver.finishEncoding()
-        return data
+    internal func encodeDirect(encode: NSKeyedArchiver -> Void) {
+        encode(archiver)
     }
 
 }

@@ -10,11 +10,13 @@ import Foundation
 
 public protocol Archivable {
 
+    typealias DecodedType
+
     // Tells the Encoder how to encode Self
-    func encode(coder: NSKeyedArchiver)
+    func encode(coder: Encoder)
 
     // Tells the Decoder how to decode Self
-    static func decode(coder: NSKeyedUnarchiver) -> Self?
+    static func decode(coder: Decoder) -> Self?
 
 }
 
@@ -23,13 +25,13 @@ public extension Archivable {
     // Archive to NSData
     func encodedData() -> NSData {
         let encoder = Encoder()
-        encoder.encode(self)
+        self.encode(encoder)
         return encoder.encodedData()
     }
 
     static func decodedValue(data: NSData) -> Self? {
         let decoder = Decoder(data: data)
-        return decoder.decode()
+        return self.decode(decoder)
     }
 
 }

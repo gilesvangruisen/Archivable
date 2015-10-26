@@ -37,5 +37,4 @@ public extension NSKeyedUnarchiver {
 
         return Value.decodedValue(data)
     }
-    
 }

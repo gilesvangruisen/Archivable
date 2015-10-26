@@ -26,8 +26,7 @@ public struct Decoder {
         return Value.decodedValue(data)
     }
 
-    public func decode<Value: Archivable>() -> Value? {
-        return Value.decode(unarchiver)
+    internal func decodeDirect<T>(decode: NSKeyedUnarchiver -> T?) -> T? {
+        return decode(unarchiver)
     }
-
 }
