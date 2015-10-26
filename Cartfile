@@ -1,0 +1,5 @@
+github "Quick/Nimble" "v2.0.0-rc.3"
+github "Quick/Quick" ~> 0.6.0
+
+github "thoughtbot/Curry" ~> 1.2.0
+github "thoughtbot/Runes" ~> 3.0.0

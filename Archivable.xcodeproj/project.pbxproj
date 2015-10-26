@@ -20,6 +20,7 @@
 		506DFECB1BC0AB5A004C3474 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DFEC81BC0AB5A004C3474 /* Nimble.framework */; };
 		506DFECC1BC0AB5A004C3474 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DFEC91BC0AB5A004C3474 /* Quick.framework */; };
 		5080CCE41BC9B4BB002D0A14 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080CCE31BC9B4BB002D0A14 /* Place.swift */; settings = {ASSET_TAGS = (); }; };
+		5080CCE61BC9E187002D0A14 /* StandardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080CCE51BC9E187002D0A14 /* StandardTypes.swift */; settings = {ASSET_TAGS = (); }; };
 		50BCD35A1BC84C99009CF984 /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BCD3591BC84C99009CF984 /* NSUserDefaults.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		506DFEC81BC0AB5A004C3474 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		506DFEC91BC0AB5A004C3474 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		5080CCE31BC9B4BB002D0A14 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = "Dummy Types/Place.swift"; sourceTree = "<group>"; };
+		5080CCE51BC9E187002D0A14 /* StandardTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StandardTypes.swift; path = Extensions/StandardTypes.swift; sourceTree = "<group>"; };
 		50BCD3591BC84C99009CF984 /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSUserDefaults.swift; path = Extensions/NSUserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 			children = (
 				506DFEC11BC09D38004C3474 /* NSKeyedArchiver.swift */,
 				50BCD3591BC84C99009CF984 /* NSUserDefaults.swift */,
+				5080CCE51BC9E187002D0A14 /* StandardTypes.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -169,7 +172,8 @@
 				506DFE8D1BBE1E75004C3474 /* Frameworks */,
 				506DFE8E1BBE1E75004C3474 /* Headers */,
 				506DFE8F1BBE1E75004C3474 /* Resources */,
-				506DFEB61BBE3D7D004C3474 /* Run Script */,
+				506DFEB61BBE3D7D004C3474 /* Copy Frameworks (Carthage) */,
+				5080CCE71BCAFFD1002D0A14 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -253,7 +257,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		506DFEB61BBE3D7D004C3474 /* Run Script */ = {
+		506DFEB61BBE3D7D004C3474 /* Copy Frameworks (Carthage) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -262,7 +266,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Curry.framework",
 			);
-			name = "Run Script";
+			name = "Copy Frameworks (Carthage)";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +290,20 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		5080CCE71BCAFFD1002D0A14 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -297,6 +315,7 @@
 				506DFEB91BBE3E41004C3474 /* Encoder.swift in Sources */,
 				506DFEC41BC09DAA004C3474 /* Archivable.swift in Sources */,
 				506DFEBF1BC09A66004C3474 /* Decoder.swift in Sources */,
+				5080CCE61BC9E187002D0A14 /* StandardTypes.swift in Sources */,
 				50BCD35A1BC84C99009CF984 /* NSUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
