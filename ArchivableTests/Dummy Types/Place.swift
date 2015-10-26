@@ -7,15 +7,18 @@
 //
 
 import Foundation
+import Curry
+import Runes
 import Archivable
 
 internal struct Place {
+    internal let city: String
+    internal let state: String
+
     internal init(city: String, state: String) {
         self.city = city
         self.state = state
     }
-    internal let city: String
-    internal let state: String
 }
 
 extension Place: Equatable {}
@@ -27,16 +30,15 @@ func ==(lhs: Place, rhs: Place) -> Bool {
 
 extension Place: Archivable {
 
-    func encode(coder: NSKeyedArchiver) {
-        coder.encodeObject(city, forKey: "city")
-        coder.encodeObject(state, forKey: "state")
+    func encode(encoder: Encoder) {
+        encoder.encode(city, forKey: "city")
+        encoder.encode(state, forKey: "state")
     }
 
-    static func decode(coder: NSKeyedUnarchiver) -> Place? {
-        return self.init(
-            city: coder.decodeObjectForKey("city") as! String,
-            state: coder.decodeObjectForKey("state") as! String
-        )
+    static func decode(decoder: Decoder) -> Place? {
+        return curry(Place.init)
+            <^> decoder.decode("city")
+            <*> decoder.decode("state")
     }
-    
+
 }
