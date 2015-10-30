@@ -1,11 +1,3 @@
-//
-//  Place.swift
-//  Archivable
-//
-//  Created by Giles Van Gruisen on 10/10/15.
-//  Copyright © 2015 Giles Van Gruisen. All rights reserved.
-//
-
 import Foundation
 import Curry
 import Runes
@@ -35,10 +27,10 @@ extension Place: Archivable {
         encoder.encode(state, forKey: "state")
     }
 
-    static func decode(decoder: Decoder) -> Place? {
+    static func decode(encoded: Encoded) -> Decoded<Place> {
         return curry(Place.init)
-            <^> decoder.decode("city")
-            <*> decoder.decode("state")
+            <^> encoded.decode("city")
+            <*> encoded.decode("state")
     }
 
 }

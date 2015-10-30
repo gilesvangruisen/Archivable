@@ -1,11 +1,3 @@
-//
-//  Person.swift
-//  StorableValue
-//
-//  Created by Giles Van Gruisen on 10/1/15.
-//  Copyright © 2015 Giles Van Gruisen. All rights reserved.
-//
-
 import Foundation
 import Curry
 import Runes
@@ -39,11 +31,11 @@ extension Person: Archivable {
         encoder.encode(home, forKey: "home")
     }
 
-    static func decode(decoder: Decoder) -> Person? {
+    static func decode(encoded: Encoded) -> Decoded<Person> {
         return curry(Person.init)
-            <^> decoder.decode("name")
-            <*> decoder.decode("age")
-            <*> decoder.decode("home")
+            <^> encoded.decode("name")
+            <*> encoded.decode("age")
+            <*> encoded.decode("home")
     }
 
 }

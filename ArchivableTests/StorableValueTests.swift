@@ -1,11 +1,3 @@
-//
-//  StorableValueTests.swift
-//  StorableValueTests
-//
-//  Created by Giles Van Gruisen on 10/1/15.
-//  Copyright © 2015 Giles Van Gruisen. All rights reserved.
-//
-
 import Quick
 import Nimble
 
