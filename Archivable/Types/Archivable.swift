@@ -10,8 +10,6 @@ import Foundation
 
 public protocol Archivable {
 
-    typealias DecodedType
-
     // Tells the Encoder how to encode Self
     func encode(coder: Encoder)
 

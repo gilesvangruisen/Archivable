@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		506DFE951BBE1E75004C3474 /* StorableValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 506DFE941BBE1E75004C3474 /* StorableValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		506DFE9C1BBE1E75004C3474 /* Archivable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DFE911BBE1E75004C3474 /* Archivable.framework */; settings = {ASSET_TAGS = (); }; };
+		506DFE9C1BBE1E75004C3474 /* Archivable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DFE911BBE1E75004C3474 /* Archivable.framework */; };
 		506DFEA11BBE1E75004C3474 /* StorableValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEA01BBE1E75004C3474 /* StorableValueTests.swift */; };
-		506DFEB21BBE21FB004C3474 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEB11BBE21FB004C3474 /* Person.swift */; settings = {ASSET_TAGS = (); }; };
-		506DFEB91BBE3E41004C3474 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEB81BBE3E40004C3474 /* Encoder.swift */; settings = {ASSET_TAGS = (); }; };
-		506DFEBF1BC09A66004C3474 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEBE1BC09A66004C3474 /* Decoder.swift */; settings = {ASSET_TAGS = (); }; };
-		506DFEC21BC09D38004C3474 /* NSKeyedArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEC11BC09D38004C3474 /* NSKeyedArchiver.swift */; settings = {ASSET_TAGS = (); }; };
-		506DFEC41BC09DAA004C3474 /* Archivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEC31BC09DAA004C3474 /* Archivable.swift */; settings = {ASSET_TAGS = (); }; };
+		506DFEB21BBE21FB004C3474 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEB11BBE21FB004C3474 /* Person.swift */; };
+		506DFEB91BBE3E41004C3474 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEB81BBE3E40004C3474 /* Encoder.swift */; };
+		506DFEBF1BC09A66004C3474 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEBE1BC09A66004C3474 /* Decoder.swift */; };
+		506DFEC21BC09D38004C3474 /* NSKeyedArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEC11BC09D38004C3474 /* NSKeyedArchiver.swift */; };
+		506DFEC41BC09DAA004C3474 /* Archivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEC31BC09DAA004C3474 /* Archivable.swift */; };
 		506DFEC61BC0AB29004C3474 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DFEC51BC0AB29004C3474 /* Runes.framework */; };
 		506DFECA1BC0AB5A004C3474 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DFEC71BC0AB5A004C3474 /* Curry.framework */; };
 		506DFECB1BC0AB5A004C3474 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DFEC81BC0AB5A004C3474 /* Nimble.framework */; };
 		506DFECC1BC0AB5A004C3474 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DFEC91BC0AB5A004C3474 /* Quick.framework */; };
-		5080CCE41BC9B4BB002D0A14 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080CCE31BC9B4BB002D0A14 /* Place.swift */; settings = {ASSET_TAGS = (); }; };
-		5080CCE61BC9E187002D0A14 /* StandardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080CCE51BC9E187002D0A14 /* StandardTypes.swift */; settings = {ASSET_TAGS = (); }; };
-		50BCD35A1BC84C99009CF984 /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BCD3591BC84C99009CF984 /* NSUserDefaults.swift */; settings = {ASSET_TAGS = (); }; };
+		5080CCE41BC9B4BB002D0A14 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080CCE31BC9B4BB002D0A14 /* Place.swift */; };
+		5080CCE61BC9E187002D0A14 /* StandardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080CCE51BC9E187002D0A14 /* StandardTypes.swift */; };
+		50BCD35A1BC84C99009CF984 /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BCD3591BC84C99009CF984 /* NSUserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -440,6 +440,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Archivable/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gilesvangruisen.Archivable;
 				PRODUCT_NAME = Archivable;
@@ -458,6 +459,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Archivable/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gilesvangruisen.Archivable;
 				PRODUCT_NAME = Archivable;

@@ -36,8 +36,8 @@ extension String: Archivable {
         }
     }
 
-    public static func decode(encoder: Decoder) -> DecodedType? {
-        return encoder.decodeDirect { unarchiver -> DecodedType? in
+    public static func decode(encoder: Decoder) -> String? {
+        return encoder.decodeDirect { unarchiver -> String? in
             return unarchiver.decodeObjectForKey("value") as? String
         }
     }
