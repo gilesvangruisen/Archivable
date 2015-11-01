@@ -1,5 +1,5 @@
 github "Quick/Nimble" ~> 3.0.0
 github "Quick/Quick" ~> 0.8.0
-github "thoughtbot/Curry" ~> 1.3.0
+github "thoughtbot/Curry" ~> 1.4.0
 github "thoughtbot/Runes" ~> 3.0.0
 

@@ -1,11 +1,3 @@
-//
-//  NSKeyedArchiver.swift
-//  StorableValue
-//
-//  Created by Giles Van Gruisen on 10/3/15.
-//  Copyright © 2015 Giles Van Gruisen. All rights reserved.
-//
-
 import Foundation
 
 public extension NSKeyedArchiver {
@@ -22,17 +14,17 @@ public extension NSKeyedArchiver {
 
 public extension NSKeyedUnarchiver {
 
-    func decodeValue<Value: Archivable>(forKey key: String) -> Value? {
+    func decodeValue<Value: Archivable>(forKey key: String) -> Decoded<Value> {
         guard let data = self.decodeObjectForKey(key) as? NSData else {
-            return .None
+            return Decoded.Failure("missing key")
         }
 
         return Value.decodedValue(data)
     }
 
-    func decodeValue<Value: Archivable>() -> Value? {
+    func decodeValue<Value: Archivable>() -> Decoded<Value> {
         guard let data = self.decodeObject() as? NSData else {
-            return .None
+            return Decoded.Failure("missing key")
         }
 
         return Value.decodedValue(data)

@@ -1,11 +1,3 @@
-//
-//  Decoder.swift
-//  StorableValue
-//
-//  Created by Giles Van Gruisen on 10/3/15.
-//  Copyright © 2015 Giles Van Gruisen. All rights reserved.
-//
-
 import Foundation
 
 public struct Decoder {
@@ -18,15 +10,15 @@ public struct Decoder {
         unarchiver = NSKeyedUnarchiver(forReadingWithData: self.data)
     }
 
-    public func decode<Value: Archivable>(key: String) -> Value? {
+    public func decode<T: Archivable>(key: String) -> Decoded<T> {
         guard let data = unarchiver.decodeObjectForKey(key) as? NSData else {
-            return .None
+            return Decoded.Failure("missing key")
         }
 
-        return Value.decodedValue(data)
+        return T.decodedValue(data)
     }
 
-    internal func decodeDirect<T>(decode: NSKeyedUnarchiver -> T?) -> T? {
-        return decode(unarchiver)
+    internal func decodeDirect<T: Archivable>(decode: NSKeyedUnarchiver -> T?) -> Decoded<T> {
+        return Decoded<T>.fromOptional(decode(unarchiver))
     }
 }

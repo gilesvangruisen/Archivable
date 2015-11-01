@@ -1,45 +1,25 @@
-//
-//  StandardTypes.swift
-//  Archivable
-//
-//  Created by Giles Van Gruisen on 10/10/15.
-//  Copyright © 2015 Giles Van Gruisen. All rights reserved.
-//
-
 import Foundation
 
-extension Int: Archivable {
+extension String: Archivable {
 
-    public func encode(encoder: Encoder) {
-        encoder.encodeDirect { archiver in
-            archiver.encodeInteger(self, forKey: "value")
-        }
+    public func encode(var encoder: Encoder) {
+        encoder.encodeDirect { $0.encodeObject(self, forKey: "") }
     }
 
-    public static func decode(decoder: Decoder) -> Int? {
-        return decoder.decodeDirect { (unarchiver) -> Int? in
-            if !unarchiver.containsValueForKey("value") {
-                return .None
-            } else {
-                return unarchiver.decodeIntegerForKey("value")
-            }
-        }
+    public static func decode(decoder: Decoder) -> Decoded<String> {
+        return decoder.decodeDirect { $0.decodeObjectForKey("") as? String }
     }
 
 }
 
-extension String: Archivable {
+extension Int: Archivable {
 
-    public func encode(encoder: Encoder) {
-        encoder.encodeDirect { archiver in
-            archiver.encodeObject(self, forKey: "value")
-        }
+    public func encode(var encoder: Encoder) {
+        encoder.encodeDirect { $0.encodeInteger(self, forKey: "") }
     }
 
-    public static func decode(encoder: Decoder) -> String? {
-        return encoder.decodeDirect { unarchiver -> String? in
-            return unarchiver.decodeObjectForKey("value") as? String
-        }
+    public static func decode(decoder: Decoder) -> Decoded<Int> {
+        return decoder.decodeDirect { $0.decodeIntegerForKey("") }
     }
-
+    
 }

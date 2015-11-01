@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084C5A321BE5728400240DF1 /* map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5A311BE5728400240DF1 /* map.swift */; };
+		0866F1131BE5746300967EC3 /* apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0866F1121BE5746300967EC3 /* apply.swift */; };
+		0866F1161BE58C9B00967EC3 /* EncoderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0866F1151BE58C9B00967EC3 /* EncoderSpec.swift */; };
+		0866F1181BE5907000967EC3 /* ArchivableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0866F1171BE5907000967EC3 /* ArchivableSpec.swift */; };
+		08EBF5AB1BE40EDB00A76CD0 /* Decoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EBF5AA1BE40EDB00A76CD0 /* Decoded.swift */; };
+		08EBF5AF1BE41D1700A76CD0 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DFEC51BC0AB29004C3474 /* Runes.framework */; };
+		08EBF5B11BE4218C00A76CD0 /* pipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EBF5B01BE4218C00A76CD0 /* pipe.swift */; };
 		506DFE951BBE1E75004C3474 /* StorableValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 506DFE941BBE1E75004C3474 /* StorableValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		506DFE9C1BBE1E75004C3474 /* Archivable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DFE911BBE1E75004C3474 /* Archivable.framework */; };
-		506DFEA11BBE1E75004C3474 /* StorableValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEA01BBE1E75004C3474 /* StorableValueTests.swift */; };
 		506DFEB21BBE21FB004C3474 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEB11BBE21FB004C3474 /* Person.swift */; };
 		506DFEB91BBE3E41004C3474 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEB81BBE3E40004C3474 /* Encoder.swift */; };
 		506DFEBF1BC09A66004C3474 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEBE1BC09A66004C3474 /* Decoder.swift */; };
@@ -35,13 +41,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		084C5A311BE5728400240DF1 /* map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = map.swift; path = Operators/map.swift; sourceTree = "<group>"; };
+		0866F1121BE5746300967EC3 /* apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = apply.swift; path = Operators/apply.swift; sourceTree = "<group>"; };
+		0866F1151BE58C9B00967EC3 /* EncoderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EncoderSpec.swift; path = Tests/EncoderSpec.swift; sourceTree = "<group>"; };
+		0866F1171BE5907000967EC3 /* ArchivableSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchivableSpec.swift; sourceTree = "<group>"; };
+		08EBF5AA1BE40EDB00A76CD0 /* Decoded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoded.swift; sourceTree = "<group>"; };
+		08EBF5B01BE4218C00A76CD0 /* pipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = pipe.swift; path = Functions/pipe.swift; sourceTree = "<group>"; };
 		506DFE911BBE1E75004C3474 /* Archivable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Archivable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		506DFE941BBE1E75004C3474 /* StorableValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StorableValue.h; sourceTree = "<group>"; };
 		506DFE961BBE1E75004C3474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		506DFE9B1BBE1E75004C3474 /* ArchivableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArchivableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		506DFEA01BBE1E75004C3474 /* StorableValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorableValueTests.swift; sourceTree = "<group>"; };
 		506DFEA21BBE1E75004C3474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		506DFEB11BBE21FB004C3474 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = "Dummy Types/Person.swift"; sourceTree = "<group>"; };
+		506DFEB11BBE21FB004C3474 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		506DFEB81BBE3E40004C3474 /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoder.swift; sourceTree = "<group>"; };
 		506DFEBE1BC09A66004C3474 /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		506DFEC11BC09D38004C3474 /* NSKeyedArchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSKeyedArchiver.swift; path = Extensions/NSKeyedArchiver.swift; sourceTree = "<group>"; };
@@ -50,7 +61,7 @@
 		506DFEC71BC0AB5A004C3474 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
 		506DFEC81BC0AB5A004C3474 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		506DFEC91BC0AB5A004C3474 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		5080CCE31BC9B4BB002D0A14 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = "Dummy Types/Place.swift"; sourceTree = "<group>"; };
+		5080CCE31BC9B4BB002D0A14 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		5080CCE51BC9E187002D0A14 /* StandardTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StandardTypes.swift; path = Extensions/StandardTypes.swift; sourceTree = "<group>"; };
 		50BCD3591BC84C99009CF984 /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSUserDefaults.swift; path = Extensions/NSUserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08EBF5AF1BE41D1700A76CD0 /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +90,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		084C5A301BE5726D00240DF1 /* Operators */ = {
+			isa = PBXGroup;
+			children = (
+				084C5A311BE5728400240DF1 /* map.swift */,
+				0866F1121BE5746300967EC3 /* apply.swift */,
+			);
+			name = Operators;
+			sourceTree = "<group>";
+		};
+		0866F1141BE58C8300967EC3 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0866F1151BE58C9B00967EC3 /* EncoderSpec.swift */,
+				0866F1171BE5907000967EC3 /* ArchivableSpec.swift */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		08EBF5AC1BE40F8D00A76CD0 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				08EBF5B01BE4218C00A76CD0 /* pipe.swift */,
+			);
+			name = Functions;
+			sourceTree = "<group>";
+		};
 		506DFE871BBE1E75004C3474 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +141,8 @@
 		506DFE931BBE1E75004C3474 /* Archivable */ = {
 			isa = PBXGroup;
 			children = (
+				084C5A301BE5726D00240DF1 /* Operators */,
+				08EBF5AC1BE40F8D00A76CD0 /* Functions */,
 				506DFEC01BC09D03004C3474 /* Extensions */,
 				506DFEAB1BBE1E8D004C3474 /* Types */,
 				506DFE941BBE1E75004C3474 /* StorableValue.h */,
@@ -114,8 +154,8 @@
 		506DFE9F1BBE1E75004C3474 /* ArchivableTests */ = {
 			isa = PBXGroup;
 			children = (
-				506DFEB01BBE21E7004C3474 /* Dummy Types */,
-				506DFEA01BBE1E75004C3474 /* StorableValueTests.swift */,
+				0866F1141BE58C8300967EC3 /* Tests */,
+				506DFEB01BBE21E7004C3474 /* DummyTypes */,
 				506DFEA21BBE1E75004C3474 /* Info.plist */,
 			);
 			path = ArchivableTests;
@@ -127,17 +167,18 @@
 				506DFEC31BC09DAA004C3474 /* Archivable.swift */,
 				506DFEB81BBE3E40004C3474 /* Encoder.swift */,
 				506DFEBE1BC09A66004C3474 /* Decoder.swift */,
+				08EBF5AA1BE40EDB00A76CD0 /* Decoded.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
 		};
-		506DFEB01BBE21E7004C3474 /* Dummy Types */ = {
+		506DFEB01BBE21E7004C3474 /* DummyTypes */ = {
 			isa = PBXGroup;
 			children = (
 				506DFEB11BBE21FB004C3474 /* Person.swift */,
 				5080CCE31BC9B4BB002D0A14 /* Place.swift */,
 			);
-			name = "Dummy Types";
+			path = DummyTypes;
 			sourceTree = "<group>";
 		};
 		506DFEC01BC09D03004C3474 /* Extensions */ = {
@@ -173,7 +214,6 @@
 				506DFE8E1BBE1E75004C3474 /* Headers */,
 				506DFE8F1BBE1E75004C3474 /* Resources */,
 				506DFEB61BBE3D7D004C3474 /* Copy Frameworks (Carthage) */,
-				5080CCE71BCAFFD1002D0A14 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -191,7 +231,7 @@
 				506DFE971BBE1E75004C3474 /* Sources */,
 				506DFE981BBE1E75004C3474 /* Frameworks */,
 				506DFE991BBE1E75004C3474 /* Resources */,
-				506DFEB71BBE3DCF004C3474 /* ShellScript */,
+				506DFEB71BBE3DCF004C3474 /* Copy Frameworks (Carthage) */,
 			);
 			buildRules = (
 			);
@@ -273,7 +313,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-		506DFEB71BBE3DCF004C3474 /* ShellScript */ = {
+		506DFEB71BBE3DCF004C3474 /* Copy Frameworks (Carthage) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -284,25 +324,12 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 			);
+			name = "Copy Frameworks (Carthage)";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		5080CCE71BCAFFD1002D0A14 /* Swift Lint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Swift Lint";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -311,12 +338,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08EBF5AB1BE40EDB00A76CD0 /* Decoded.swift in Sources */,
 				506DFEC21BC09D38004C3474 /* NSKeyedArchiver.swift in Sources */,
 				506DFEB91BBE3E41004C3474 /* Encoder.swift in Sources */,
+				084C5A321BE5728400240DF1 /* map.swift in Sources */,
 				506DFEC41BC09DAA004C3474 /* Archivable.swift in Sources */,
 				506DFEBF1BC09A66004C3474 /* Decoder.swift in Sources */,
 				5080CCE61BC9E187002D0A14 /* StandardTypes.swift in Sources */,
 				50BCD35A1BC84C99009CF984 /* NSUserDefaults.swift in Sources */,
+				0866F1131BE5746300967EC3 /* apply.swift in Sources */,
+				08EBF5B11BE4218C00A76CD0 /* pipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +357,8 @@
 			files = (
 				5080CCE41BC9B4BB002D0A14 /* Place.swift in Sources */,
 				506DFEB21BBE21FB004C3474 /* Person.swift in Sources */,
-				506DFEA11BBE1E75004C3474 /* StorableValueTests.swift in Sources */,
+				0866F1161BE58C9B00967EC3 /* EncoderSpec.swift in Sources */,
+				0866F1181BE5907000967EC3 /* ArchivableSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +470,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Archivable/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -457,6 +493,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Archivable/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

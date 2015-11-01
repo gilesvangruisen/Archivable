@@ -24,18 +24,16 @@ func == (lhs: Person, rhs: Person) -> Bool {
 }
 
 extension Person: Archivable {
-
-    func encode(encoder: Encoder) {
+    func encode(var encoder: Encoder) {
         encoder.encode(name, forKey: "name")
         encoder.encode(age, forKey: "age")
         encoder.encode(home, forKey: "home")
     }
 
-    static func decode(encoded: Encoded) -> Decoded<Person> {
+    static func decode(decoder: Decoder) -> Decoded<Person> {
         return curry(Person.init)
-            <^> encoded.decode("name")
-            <*> encoded.decode("age")
-            <*> encoded.decode("home")
+            <^> decoder.decode("name")
+            <*> decoder.decode("age")
+            <*> decoder.decode("home")
     }
-
 }

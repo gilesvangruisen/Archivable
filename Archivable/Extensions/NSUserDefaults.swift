@@ -1,11 +1,3 @@
-//
-//  NSUserDefaults.swift
-//  Archivable
-//
-//  Created by Giles Van Gruisen on 10/9/15.
-//  Copyright © 2015 Giles Van Gruisen. All rights reserved.
-//
-
 import Foundation
 
 public extension NSUserDefaults {
@@ -16,9 +8,9 @@ public extension NSUserDefaults {
         }
     }
 
-    func valueForKey<Value: Archivable>(key: String) -> Value? {
+    func valueForKey<Value: Archivable>(key: String) -> Decoded<Value> {
         guard let data = objectForKey(key) as? NSData else {
-            return .None
+            return Decoded.Failure("missing key")
         }
 
         return Value.decodedValue(data)

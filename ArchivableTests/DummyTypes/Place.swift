@@ -4,8 +4,8 @@ import Runes
 import Archivable
 
 internal struct Place {
-    internal let city: String
-    internal let state: String
+    let city: String
+    let state: String
 
     internal init(city: String, state: String) {
         self.city = city
@@ -22,15 +22,15 @@ func ==(lhs: Place, rhs: Place) -> Bool {
 
 extension Place: Archivable {
 
-    func encode(encoder: Encoder) {
+    func encode(var encoder: Encoder) {
         encoder.encode(city, forKey: "city")
         encoder.encode(state, forKey: "state")
     }
 
-    static func decode(encoded: Encoded) -> Decoded<Place> {
+    static func decode(decoder: Decoder) -> Decoded<Place> {
         return curry(Place.init)
-            <^> encoded.decode("city")
-            <*> encoded.decode("state")
+            <^> decoder.decode("city")
+            <*> decoder.decode("state")
     }
 
 }

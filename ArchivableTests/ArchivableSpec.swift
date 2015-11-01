@@ -3,7 +3,7 @@ import Nimble
 
 @testable import Archivable
 
-class StorableValueTests: QuickSpec {
+class ArchivableSpec: QuickSpec {
     
     override func spec() {
 
@@ -12,20 +12,27 @@ class StorableValueTests: QuickSpec {
             let newport = Place(city: "Newport", state: "RI")
             let person = Person(name: "giles", age: 21, home: newport)
             let data = person.encodedData()
-            let restoredPerson = Person.decodedValue(data)
+            let decodedPerson = Person.decodedValue(data)
+
+            print(decodedPerson.error)
+            print(decodedPerson.value)
 
             context("when decoded") {
 
+                it("should not error") {
+                    expect(decodedPerson.error).to(beNil())
+                }
+
                 it("should not be nil") {
-                    expect(restoredPerson).toNot(beNil())
+                    expect(decodedPerson.value).toNot(beNil())
                 }
 
                 it("should be equivalent to the original value") {
-                    expect(restoredPerson).to(equal(person))
+                    expect(decodedPerson.value).to(equal(.Some(person)))
                 }
 
                 it("should retain stored Archivable values") {
-                    expect(restoredPerson!.home).to(equal(person.home))
+                    expect(decodedPerson.value?.home).to(equal(.Some(person.home)))
                 }
 
             }
