@@ -14,9 +14,6 @@ class ArchivableSpec: QuickSpec {
             let data = person.encodedData()
             let decodedPerson = Person.decodedValue(data)
 
-            print(decodedPerson.error)
-            print(decodedPerson.value)
-
             context("when decoded") {
 
                 it("should not error") {

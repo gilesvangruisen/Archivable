@@ -22,7 +22,7 @@ func ==(lhs: Place, rhs: Place) -> Bool {
 
 extension Place: Archivable {
 
-    func encode(var encoder: Encoder) {
+    func encode(encoder: Encoder) {
         encoder.encode(city, forKey: "city")
         encoder.encode(state, forKey: "state")
     }

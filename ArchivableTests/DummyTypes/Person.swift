@@ -24,7 +24,7 @@ func == (lhs: Person, rhs: Person) -> Bool {
 }
 
 extension Person: Archivable {
-    func encode(var encoder: Encoder) {
+    func encode(encoder: Encoder) {
         encoder.encode(name, forKey: "name")
         encoder.encode(age, forKey: "age")
         encoder.encode(home, forKey: "home")
