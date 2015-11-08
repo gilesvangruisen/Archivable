@@ -23,25 +23,26 @@ func tailDecode(data: NSData?, _ keys: [String]) -> AnyObject? {
 }
 
 class EncoderSpec: QuickSpec {
-
     override func spec() {
         describe("Encoder") {
-            describe("encoding an Archivable value") {
-                context("when the value is a string") {
-                    it("should encode directly on archiver") {
-                        let original = "value"
-                        let value = tailDecode(original.encodedData(), [""]) as? String
+            describe("encoding an ArchivableStandardType value") {
+                it("should encode directly on archiver successfully") {
+                    let original = "some string"
+                    let encoder = Encoder().encode(original, forKey: "some key")
+                    let value = tailDecode(encoder.encodedData(), ["some key"])
 
-                        expect(value).toNot(beNil())
-                        expect(value).to(equal(original))
-                    }
+                    expect(value).toNot(beNil())
+                    expect(value as? String).to(equal(original))
                 }
+            }
 
+            describe("encoding an Archivable value") {
                 context("when the value is a struct") {
 
                     it("should encode stored properties on archiver") {
                         let original = Place(city: "Newport", state: "RI")
-                        let city = tailDecode(original.encodedData(), ["city", ""]) as? String
+                        let encoder = Encoder().encode(original, forKey: "root")
+                        let city = tailDecode(encoder.encodedData(), ["root", "city"]) as? String
 
                         expect(city).toNot(beNil())
                         expect(city).to(equal(original.city))
@@ -52,7 +53,10 @@ class EncoderSpec: QuickSpec {
                     it("should recursively encode its encoded properties on archiver") {
                         let originalHome = Place(city: "Newport", state: "RI")
                         let originalPerson = Person(name: "Giles", age: 21, home: originalHome)
-                        let city = tailDecode(originalPerson.encodedData(), ["home", "city", ""]) as? String
+
+                        let encoder = Encoder()
+                        encoder.encode(originalPerson, forKey: "root")
+                        let city = tailDecode(encoder.encodedData(), ["root", "home", "city"]) as? String
 
                         expect(city).toNot(beNil())
                         expect(city).to(equal(originalPerson.home.city))
