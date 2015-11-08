@@ -18,6 +18,11 @@ public struct Decoder {
         return T.decodedValue(data)
     }
 
+    public func decode<T: ArchivableStandardType>(key: String) -> Decoded<T> {
+        let value: T? = T.decode(fromUnarchiver: unarchiver, forKey: key)
+        return Decoded<T>.fromOptional(value)
+    }
+
     internal func decodeDirect<T: Archivable>(decode: NSKeyedUnarchiver -> T?) -> Decoded<T> {
         return Decoded<T>.fromOptional(decode(unarchiver))
     }

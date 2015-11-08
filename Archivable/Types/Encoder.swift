@@ -23,8 +23,10 @@ public struct Encoder {
         return self
     }
 
-    internal mutating func encodeDirect(encode: NSKeyedArchiver -> Void) {
-        encode(archiver)
+    public func encode<Value: ArchivableStandardType>(value: Value?, forKey key: String) -> Encoder {
+        value?.encode(toArchiver: archiver, forKey: key)
+
+        return self
     }
 
 }
