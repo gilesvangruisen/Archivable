@@ -23,7 +23,7 @@ extension Decoded {
     public static func fromOptional<T>(x: T?) -> Decoded<T> {
         switch x {
         case let .Some(value): return .Success(value)
-        default: return .Failure("empty optional")
+        default: return .Failure("Empty Optional")
         }
     }
 }
