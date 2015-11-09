@@ -2,15 +2,15 @@ import Foundation
 
 public extension NSKeyedArchiver {
 
-    func encodeValue<T: Archivable>(value: T?, forKey key: String) -> Void {
+    func encodeValue(value: Archivable?, forKey key: String) -> Void {
         self.encodeObject(value?.encodedData(), forKey: key)
     }
 
-    func encodeValue<T: Archivable>(value: T?) -> Void {
+    func encodeValue(value: Archivable?) -> Void {
         self.encodeObject(value?.encodedData())
     }
 
-    func encodeStandardType<T: ArchivableStandardType>(value: T?, forKey key: String) -> Void {
+    func encodeStandardType(value: ArchivableStandardType?, forKey key: String) -> Void {
         value?.encode(toArchiver: self, forKey: key)
     }
 
