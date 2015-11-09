@@ -16,7 +16,6 @@
 		0895FC411BE6F2490039731F /* DecoderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895FC401BE6F2490039731F /* DecoderSpec.swift */; };
 		08EBF5AB1BE40EDB00A76CD0 /* Decoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EBF5AA1BE40EDB00A76CD0 /* Decoded.swift */; };
 		08EBF5AF1BE41D1700A76CD0 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DFEC51BC0AB29004C3474 /* Runes.framework */; };
-		08EBF5B11BE4218C00A76CD0 /* pipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EBF5B01BE4218C00A76CD0 /* pipe.swift */; };
 		506DFE951BBE1E75004C3474 /* StorableValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 506DFE941BBE1E75004C3474 /* StorableValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		506DFE9C1BBE1E75004C3474 /* Archivable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DFE911BBE1E75004C3474 /* Archivable.framework */; };
 		506DFEB21BBE21FB004C3474 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506DFEB11BBE21FB004C3474 /* Person.swift */; };
@@ -52,7 +51,6 @@
 		0866F1171BE5907000967EC3 /* ArchivableSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArchivableSpec.swift; path = Tests/ArchivableSpec.swift; sourceTree = "<group>"; };
 		0895FC401BE6F2490039731F /* DecoderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecoderSpec.swift; path = Tests/DecoderSpec.swift; sourceTree = "<group>"; };
 		08EBF5AA1BE40EDB00A76CD0 /* Decoded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoded.swift; sourceTree = "<group>"; };
-		08EBF5B01BE4218C00A76CD0 /* pipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = pipe.swift; path = Functions/pipe.swift; sourceTree = "<group>"; };
 		506DFE911BBE1E75004C3474 /* Archivable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Archivable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		506DFE941BBE1E75004C3474 /* StorableValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StorableValue.h; sourceTree = "<group>"; };
 		506DFE961BBE1E75004C3474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 		08EBF5AC1BE40F8D00A76CD0 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
-				08EBF5B01BE4218C00A76CD0 /* pipe.swift */,
 			);
 			name = Functions;
 			sourceTree = "<group>";
@@ -357,7 +354,6 @@
 				0855371C1BED6E51006E1D74 /* ArchivableStandardType.swift in Sources */,
 				50BCD35A1BC84C99009CF984 /* NSUserDefaults.swift in Sources */,
 				0866F1131BE5746300967EC3 /* apply.swift in Sources */,
-				08EBF5B11BE4218C00A76CD0 /* pipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

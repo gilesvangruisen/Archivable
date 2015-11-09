@@ -4,16 +4,16 @@ import Runes
 
 @testable import Archivable
 
-func valueDecoder(data: NSData) -> String -> AnyObject? {
-    return NSKeyedUnarchiver.decodeObjectForKey <| NSKeyedUnarchiver.init <| data
+func makeDecoder(data: NSData) -> String -> AnyObject? {
+    return NSKeyedUnarchiver(forReadingWithData: data).decodeObjectForKey
 }
 
-func decode(data: NSData?)(_ key: String?) -> AnyObject? {
-    return { $0 -<< key } -<< valueDecoder <^> data
+func decode(data: NSData?, _ key: String?) -> AnyObject? {
+    return { $0 -<< key } -<< makeDecoder <^> data
 }
 
 func tailDecode(data: NSData?, _ keys: [String]) -> AnyObject? {
-    let decoded = decode(data)(keys.first)
+    let decoded = decode(data, keys.first)
 
     if keys.count <= 1 {
         return decoded
@@ -54,8 +54,7 @@ class EncoderSpec: QuickSpec {
                         let originalHome = Place(city: "Newport", state: "RI")
                         let originalPerson = Person(name: "Giles", age: 21, home: originalHome)
 
-                        let encoder = Encoder()
-                        encoder.encode(originalPerson, forKey: "root")
+                        let encoder = Encoder().encode(originalPerson, forKey: "root")
                         let city = tailDecode(encoder.encodedData(), ["root", "home", "city"]) as? String
 
                         expect(city).toNot(beNil())

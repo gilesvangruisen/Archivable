@@ -15,15 +15,13 @@ public struct Encoder {
         return NSData(data: data)
     }
 
-    public func encode<Value: Archivable>(value: Value?, forKey key: String) -> Encoder {
-        if let value = value {
-            archiver.encodeObject(value.encodedData(), forKey: key)
-        }
+    public func encode(value: Archivable?, forKey key: String) -> Encoder {
+        archiver.encodeObject(value?.encodedData(), forKey: key)
 
         return self
     }
 
-    public func encode<Value: ArchivableStandardType>(value: Value?, forKey key: String) -> Encoder {
+    public func encode(value: ArchivableStandardType?, forKey key: String) -> Encoder {
         value?.encode(toArchiver: archiver, forKey: key)
 
         return self

@@ -18,7 +18,7 @@ public extension Archivable {
     }
 
     public func encodedData() -> NSData {
-        return (_encode <| Encoder()).encodedData()
+        return _encode(Encoder()).encodedData()
     }
 
     public static func decodedValue(data: NSData) -> Decoded<Self> {
