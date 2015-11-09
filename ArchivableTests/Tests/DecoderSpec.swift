@@ -61,11 +61,11 @@ class DecoderSpec: QuickSpec {
 
             context("decoding an Archivable value with a type-incorrect encode") {
                 it("should fail with a Type Mismatch error") {
-                    let original = MissingKeyModel(intProp: 0, textProp: "text")
+                    let original = TypeMismatchModel(intProp: 0, textProp: "text")
                     let encodedData = Encoder().encode(original, forKey: "root").encodedData()
                     let decoder = Decoder(data: encodedData)
 
-                    let result: Decoded<MissingKeyModel> = decoder.decode("root")
+                    let result: Decoded<TypeMismatchModel> = decoder.decode("root")
 
                     expect(result.error).toNot(beNil())
                     expect(result.error).to(equal("Type Mismatch: expected 'String' for key 'textProp'"))
