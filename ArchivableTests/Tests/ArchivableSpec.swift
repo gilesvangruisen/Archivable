@@ -6,9 +6,7 @@ import Nimble
 class ArchivableSpec: QuickSpec {
     
     override func spec() {
-
         describe("Archivable type") {
-
             let newport = Place(city: "Newport", state: "RI")
             let person = Person(name: "giles", age: 21, home: newport)
             let data = person.encodedData()
@@ -31,9 +29,7 @@ class ArchivableSpec: QuickSpec {
                 it("should retain stored Archivable values") {
                     expect(decodedPerson.value?.home).to(equal(.Some(person.home)))
                 }
-
             }
         }
     }
-    
 }

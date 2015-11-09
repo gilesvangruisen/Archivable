@@ -13,6 +13,7 @@
 		085537211BF0D49C006E1D74 /* DecodeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085537201BF0D49C006E1D74 /* DecodeHelpers.swift */; };
 		085537231BF0E1BB006E1D74 /* MissingKeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085537221BF0E1BB006E1D74 /* MissingKeyModel.swift */; };
 		085537251BF0E62E006E1D74 /* TypeMismatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085537241BF0E62E006E1D74 /* TypeMismatchModel.swift */; };
+		085537271BF13B3C006E1D74 /* UserDefaultsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085537261BF13B3C006E1D74 /* UserDefaultsSpec.swift */; };
 		0866F1131BE5746300967EC3 /* apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0866F1121BE5746300967EC3 /* apply.swift */; };
 		0866F1161BE58C9B00967EC3 /* EncoderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0866F1151BE58C9B00967EC3 /* EncoderSpec.swift */; };
 		0866F1181BE5907000967EC3 /* ArchivableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0866F1171BE5907000967EC3 /* ArchivableSpec.swift */; };
@@ -52,6 +53,7 @@
 		085537201BF0D49C006E1D74 /* DecodeHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecodeHelpers.swift; path = Helpers/DecodeHelpers.swift; sourceTree = "<group>"; };
 		085537221BF0E1BB006E1D74 /* MissingKeyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissingKeyModel.swift; sourceTree = "<group>"; };
 		085537241BF0E62E006E1D74 /* TypeMismatchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeMismatchModel.swift; sourceTree = "<group>"; };
+		085537261BF13B3C006E1D74 /* UserDefaultsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsSpec.swift; path = Tests/UserDefaultsSpec.swift; sourceTree = "<group>"; };
 		0866F1121BE5746300967EC3 /* apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = apply.swift; path = Operators/apply.swift; sourceTree = "<group>"; };
 		0866F1151BE58C9B00967EC3 /* EncoderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EncoderSpec.swift; path = Tests/EncoderSpec.swift; sourceTree = "<group>"; };
 		0866F1171BE5907000967EC3 /* ArchivableSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArchivableSpec.swift; path = Tests/ArchivableSpec.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				0866F1151BE58C9B00967EC3 /* EncoderSpec.swift */,
 				0895FC401BE6F2490039731F /* DecoderSpec.swift */,
 				0855371D1BEEED38006E1D74 /* StandardTypesSpec.swift */,
+				085537261BF13B3C006E1D74 /* UserDefaultsSpec.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				085537251BF0E62E006E1D74 /* TypeMismatchModel.swift in Sources */,
 				0895FC411BE6F2490039731F /* DecoderSpec.swift in Sources */,
 				506DFEB21BBE21FB004C3474 /* Person.swift in Sources */,
+				085537271BF13B3C006E1D74 /* UserDefaultsSpec.swift in Sources */,
 				0866F1161BE58C9B00967EC3 /* EncoderSpec.swift in Sources */,
 				0866F1181BE5907000967EC3 /* ArchivableSpec.swift in Sources */,
 			);

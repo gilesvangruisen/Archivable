@@ -5,7 +5,6 @@ import Runes
 @testable import Archivable
 
 class DecoderSpec: QuickSpec {
-
     override func spec() {
         describe("Decoder") {
             it("should decode an ArchivableStandardType value") {

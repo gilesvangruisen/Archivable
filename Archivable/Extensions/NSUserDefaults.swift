@@ -2,18 +2,22 @@ import Foundation
 
 public extension NSUserDefaults {
 
-    func setValue<Value: Archivable>(value: Value?, forKey key: String) {
+    func setValue<T: Archivable>(value: T?, forKey key: String) {
         if let value = value {
             setObject(value.encodedData(), forKey: key)
         }
     }
 
-    func valueForKey<Value: Archivable>(key: String) -> Decoded<Value> {
-        guard let data = objectForKey(key) as? NSData else {
-            return Decoded.Failure("missing key")
+    func valueForKey<T: Archivable>(key: String) -> Decoded<T> {
+        guard let object = objectForKey(key) else {
+            return .Failure("Missing Key: '\(key)'")
         }
 
-        return Value.decodedValue(data)
+        guard let data = object as? NSData else {
+            return .Failure("Type Mismatch: expected '\(T.self)' for key '\(key)'")
+        }
+
+        return T.decodedValue(data)
     }
 
 }

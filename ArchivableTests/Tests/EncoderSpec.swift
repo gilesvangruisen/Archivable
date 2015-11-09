@@ -41,16 +41,15 @@ class EncoderSpec: QuickSpec {
                     let place = Place(city: "Boston", state: "MA")
 
                     let autoEncoder = Encoder().encode(place, forKey: "root")
-                    let manualEncoder = Encoder().encode(place, forKey: "root")
-
                     let autoData = autoEncoder.encodedData()
+
+                    let manualEncoder = Encoder().encode(place, forKey: "root")
                     manualEncoder.archiver.finishEncoding()
                     let manualData = NSData(data: manualEncoder.data)
 
                     expect(manualData).to(equal(autoData))
                 }
             }
-
         }
     }
 }
