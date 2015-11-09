@@ -1,43 +1,65 @@
 # Archivable
-Archivable lets you simply encode and decode value types in Swift, allowing them to easily be archived locally with `NSUserDefaults` or another similar cache.
+Archivable is a library for functionally encoding and decoding Swift value
+types, allowing them to stored locally with `NSUserDefaults` or another `NSData`
+cache. The library was heavily inspired by the functional JSON parsing library,
+[Argo](http://github.com/thoughtbot/argo).
 
-## How does it work?
-`Archivable` is a protocol that defines two methods, `encode` and `decode`, for encoding `self` to `NSData` and failably decoding `NSData` back to `Self`, respectively.
+## How do I use it?
+`Archivable` is a protocol that defines two methods, `encode(encoder: Encoder)`
+and `decode(decoder: Decoder) -> Decoded<Self>`. The first allows custom types
+to be encoded and stored as serialized `NSData`, while the second allows those
+types to then be failably decoded and initialized from `NSData`.
 
 ## Example
 
-Define a custom type
+In the following example, we define a simple model, `Person`, which contains two
+stored properties: `name` of type `String`, and `age` of type `Int`. We then
+extend our `Person` model to conform to `Archivable`, providing the two method
+implementations necessary for encoding and decoding to/from `NSData`.
+
 ```Swift
+import Runes
+import Archivable
+
 struct Person {
   let name: String
   let age: Int
 }
-```
 
-Extend your type to conform to `Archivable`
-```Swift
 extension Person: Archivable {
-  func encode(coder: NSKeyedArchiver) {
-      coder.encodeObject(name, forKey: "name")
-      coder.encodeInteger(age, forKey: "age")
+  func encode(encoder: Encoder) {
+    encoder.encode(name, forKey: "name")
+    encoder.encode(age, forKey: "age")
   }
 
-  static func decode(coder: NSKeyedUnarchiver) -> Person? {
-      return Person(
-        name: coder.decodeObjectForKey("name") as! String,
-        age: coder.decodeIntegerForKey("age")
-      )
+  static func decode(coder: NSKeyedUnarchiver) -> Decoded<Person> {
+    return curry(Person.init)
+      <^> decoder.decode("name")
+      <*> decoder.decode("age")
   }
 }
 ```
 
-Encode and save to `NSUserDefaults`, then decode again.
-```Swift
-// Create & encode Person
-let giles = Person(name: "Giles", age: Int)
-NSUserDefaults.standardUserDefaults().setValue(giles, forKey: "current_user")
+Now, you can easily encode and store any instance of `Person`, just as you would
+with a `NSCoding` compliant model, but you get all the inherent benefits of
+immutable value types. :tada:
 
-// Decode Person
-let currentUserData = NSUserDefaults.standardUserDefaults().valueForKey("current_user")
-let currentUser = Person.decodedValue(currentUserData) // returns Person?
+For example, we can save a `Person` to `NSUserDefaults`, then decode again
+later as needed:
+
+```Swift
+let defaults = NSUserDefaults.standardUserDefaults()
+let giles = Person(name: "Giles", age: 21)
+
+// Encode
+defaults.setValue(giles, forKey: "dummy")
+
+// Decode
+let decodedGiles: Decoded<Person> = defaults.valueForKey("dummy")
+
+// Confirm
+if let dummy = decodedGiles.value {
+    print(dummy.name) // prints "Giles"
+}
 ```
+
